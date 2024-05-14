@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaloot by Liel</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='game_style.css') }}">
+</head>
+<body>
+    <div class="logo">      
+        <img onclick="location.href='/'" src="{{ url_for('static', filename='kaloot.png') }}">
+        </div>
+    <div class="questioned_image">
+    <img src="{{ url_for('static', filename='pictures/' + image_file) }}" alt="{{ image_file }}" id="question-img">
+    </div>
+    <script>
+        // Define a JavaScript variable to store the correct answer
+        var correctAnswer = "{{ correct_answer }}";
+    </script>
+    <div class="options-container">
+        {% for option in options %}
+        <button class="option" onclick="checkAnswer('{{ option }}')">{{ option }}</button>
+        {% endfor %}
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+</body>
+</html>

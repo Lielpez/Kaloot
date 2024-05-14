@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaloot by Liel</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="menu">
+        <div class="logo">      
+        <img onclick="location.href='/'" src="{{ url_for('static', filename='kaloot.png') }}">
+        </div>
+        <div class="buttons">
+        <button onclick="location.href='/game'" class="btn" ><p data-start="good luck!" data-text="start!" data-title="new game"></p></button> 
+        </div>
+    </div>
+</body>
+</html>

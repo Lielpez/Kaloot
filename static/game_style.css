@@ -1,0 +1,60 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+.questioned_image img {
+    max-width: auto;
+    max-height: 550px;
+    min-height: 550px;
+    user-select: none;
+    -webkit-user-drag: none;
+    /* Add additional styles as needed */
+    /* Add additional styles as needed */
+}
+.logo img{
+    cursor: pointer;
+}
+body {
+    background:
+    /* top, transparent black, faked with gradient */ 
+    linear-gradient(
+      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.7)
+    ),
+    /* bottom, image */
+    url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEidZ6vrOD7b2iIWEVN0SlhLpZyDalm_X9JWW4M-rtoOx0HYn45H2gH2jQtoqiZXqWQckw6j5UGIVvp5e6ARZDO2O7GcNylwHB80RMYrlPf6zk2Hqgl9ibwoeyaWCIKNaQX0zFjAs3uCG0ufuLl-jKLT2K7oiYrmq2OGduUqbMmY9ljOJ8hrUw9E4QhNNTQM/d/HEROSCREEN.CC-WALLPAPER-4K-MOUNTAINSCAPE-181023.jpg);
+    background-size: cover;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#question-img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.options-container {
+    display: flex;
+    justify-content: center;
+}
+
+.option {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #ff5900;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight:600;
+}
+
+.option:hover {
+    background-color: #a64000;
+}
