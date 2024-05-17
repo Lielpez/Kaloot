@@ -10,9 +10,9 @@
 <body>
     <div class="logo">      
         <img onclick="location.href='/'" src="{{ url_for('static', filename='kaloot.png') }}">
-        </div>
+    </div>
     <div class="questioned_image">
-    <img src="{{ url_for('static', filename='pictures/' + image_file) }}" alt="{{ image_file }}" id="question-img">
+        <img src="{{ url_for('static', filename='pictures/' + image_file) }}" alt="{{ image_file }}" id="question-img">
     </div>
     <script>
         // Define a JavaScript variable to store the correct answer

@@ -10,10 +10,11 @@
 <body>
     <div class="menu">
         <div class="logo">      
-        <img onclick="location.href='/'" src="{{ url_for('static', filename='kaloot.png') }}">
+            <img onclick="location.href='/'" src="{{ url_for('static', filename='kaloot.png') }}">
         </div>
         <div class="buttons">
-        <button onclick="location.href='/game'" class="btn" ><p data-start="good luck!" data-text="start!" data-title="new game"></p></button> 
+            <button onclick="location.href='/game'" class="btn"><p data-start="good luck!" data-text="start!" data-title="new game"></p></button>
+            <button onclick="location.href='/upload'" class="btn"><p data-text="upload!" data-title="upload images"></p></button> 
         </div>
     </div>
 </body>
