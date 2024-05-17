@@ -4,6 +4,8 @@ from os.path import isfile, join, splitext, exists
 import os
 import random
 import shutil
+from PIL import Image
+from pillow_heif import register_heif_opener
 
 app = Flask(__name__)
 UPLOAD_FOLDER = 'static/pictures'
@@ -11,6 +13,9 @@ UPLOAD_FOLDER = 'static/pictures'
 # Ensure the upload folder exists
 if not exists(UPLOAD_FOLDER):
     makedirs(UPLOAD_FOLDER)
+
+# Register HEIF opener
+register_heif_opener()
 
 @app.route('/')
 def index():
@@ -31,10 +36,28 @@ def upload():
         for file in files:
             if file and file.filename != '':
                 file_name = os.path.basename(file.filename)
-                file.save(join(UPLOAD_FOLDER, file_name))
+                file_path = join(UPLOAD_FOLDER, file_name)
+                file.save(file_path)
+
+                # Check if the file is a HEIC file and convert it to JPEG
+                if file_name.lower().endswith('.heic'):
+                    heic_to_jpeg(file_path)
         return redirect(url_for('game'))
     
     return render_template('upload.html')
+
+def heic_to_jpeg(heic_path):
+    # Open the HEIC file using Pillow with pillow-heif
+    image = Image.open(heic_path)
+    
+    # Create the JPEG file path
+    jpeg_path = splitext(heic_path)[0] + '.jpg'
+    
+    # Save the image as JPEG
+    image.save(jpeg_path, 'JPEG')
+    
+    # Remove the original HEIC file
+    os.remove(heic_path)
 
 @app.route('/game')
 def game():
@@ -57,5 +80,6 @@ def game():
     
     return render_template('game.html', options=options, image_file=image_file, correct_answer=correct_answer)
 
+
 if __name__ == '__main__':
-    app.run(debug=True,host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0')
