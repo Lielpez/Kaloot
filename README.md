@@ -1,6 +1,8 @@
-# Kaloot
-Kaloot
-In order to run the kaloot you need to **create pictures folder** in the static folder and **change the path** in the 15th line of the **main.py**
+# Kaloot By Liel
+
+Ahalan megamet Devops/IT manager and whoever uses it, in order to run the Kaloot you can clone/download the project.
+
+Download Requiremnts
 
 after this you run the main.py script and access to the host in port 5000 :) GL in the course my friends
 
