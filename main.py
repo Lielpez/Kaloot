@@ -32,6 +32,7 @@ def upload():
             if file and file.filename != '':
                 file_name = os.path.basename(file.filename)
                 file.save(join(UPLOAD_FOLDER, file_name))
+                
         return redirect(url_for('game'))
     
     return render_template('upload.html')
@@ -45,6 +46,7 @@ def game():
         return 'No images found in the uploaded folder. Please upload images first.'
     
     image_file = random.choice(onlyfiles)
+    
     options = [image_file]
     onlyfiles.remove(image_file)
     options += (random.sample(onlyfiles, 3))
@@ -58,4 +60,4 @@ def game():
     return render_template('game.html', options=options, image_file=image_file, correct_answer=correct_answer)
 
 if __name__ == '__main__':
-    app.run(debug=True,host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0')
