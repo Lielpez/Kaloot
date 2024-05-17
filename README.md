@@ -3,7 +3,7 @@
 Ahalan megamet Devops/IT manager and whoever uses it, in order to run the Kaloot you need to clone/download the project.
 
 ## **Download Requirements**
-**pip install Flask pillow pillow_heif pyheif --proxy 10.0.0.10**
+**pip install Flask pillow pillow_heif --proxy 10.0.0.10**
 
 ## **Running app**
 run this command - **python main.py**
