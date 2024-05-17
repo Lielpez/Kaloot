@@ -68,6 +68,7 @@ def game():
         return 'No images found in the uploaded folder. Please upload images first.'
     
     image_file = random.choice(onlyfiles)
+    
     options = [image_file]
     onlyfiles.remove(image_file)
     options += (random.sample(onlyfiles, 3))
