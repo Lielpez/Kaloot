@@ -58,4 +58,4 @@ def game():
     return render_template('game.html', options=options, image_file=image_file, correct_answer=correct_answer)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0')
