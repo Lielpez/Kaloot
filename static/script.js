@@ -29,9 +29,9 @@ function checkAnswer(selectedAnswer) {
         // Disable further clicks on buttons
         button.disabled = true;
     });
-
     // Wait for 2 seconds before redirecting
     setTimeout(function() {
-        window.location.href = '/game'; // Redirect to the /game route
+        var selectedOption = document.getElementById('selectedCourse').textContent;
+        location.href = '/game?course=' + (selectedOption);
     }, 1500); // 1500 milliseconds = 1.5 seconds
 }

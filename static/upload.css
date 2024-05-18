@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background:
+    /* top, transparent black, faked with gradient */ 
+    linear-gradient(
+      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.7)
+    ),
+    /* bottom, image */
+    url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEidZ6vrOD7b2iIWEVN0SlhLpZyDalm_X9JWW4M-rtoOx0HYn45H2gH2jQtoqiZXqWQckw6j5UGIVvp5e6ARZDO2O7GcNylwHB80RMYrlPf6zk2Hqgl9ibwoeyaWCIKNaQX0zFjAs3uCG0ufuLl-jKLT2K7oiYrmq2OGduUqbMmY9ljOJ8hrUw9E4QhNNTQM/d/HEROSCREEN.CC-WALLPAPER-4K-MOUNTAINSCAPE-181023.jpg);
+    background-size: cover;
+}
+
+.container{
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  color: #FFFFFF;
+}
+
+.form-group {
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+    color: #FFFFFF;
+}

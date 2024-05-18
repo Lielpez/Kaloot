@@ -13,9 +13,26 @@
             <img onclick="location.href='/'" src="{{ url_for('static', filename='kaloot.png') }}">
         </div>
         <div class="buttons">
-            <button onclick="location.href='/game'" class="btn"><p data-start="good luck!" data-text="start!" data-title="new game"></p></button>
-            <button onclick="location.href='/upload'" class="btn"><p data-text="upload!" data-title="upload images"></p></button> 
+            <button onclick="redirectToGame()" class="btn">
+                <p data-start="good luck!" data-text="start!" data-title="new game"></p>
+            </button>
+            <button onclick="location.href='/upload'" class="btn">
+                <p data-text="upload!" data-title="upload images"></p>
+            </button> 
+            </div>
+            
+            <select name="course" id="course" placeholder="Source Type">
+                {% for option in dir_list %}
+                <option value="{{ option }}"> {{ option }}</option>
+                {% endfor %}
+            </select>
         </div>
     </div>
+    <script>
+        function redirectToGame() {
+            var selectedOption = document.getElementById('course').value;
+            location.href = '/game?course=' + encodeURIComponent(selectedOption);
+        }
+        </script>
 </body>
 </html>

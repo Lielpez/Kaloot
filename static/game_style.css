@@ -31,6 +31,9 @@ body {
     text-align: center;
 }
 
+body p {
+    color: orange;
+}
 #question-img {
     max-width: 100%;
     height: auto;

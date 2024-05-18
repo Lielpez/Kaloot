@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='game_style.css') }}">
 </head>
 <body>
+    <p>קורס נבחר: <span id="selectedCourse"></span></p>
     <div class="logo">      
         <img onclick="location.href='/'" src="{{ url_for('static', filename='kaloot.png') }}">
     </div>
     <div class="questioned_image">
-        <img src="{{ url_for('static', filename='pictures/' + image_file) }}" alt="{{ image_file }}" id="question-img">
+        <img src="{{ url_for('static', filename='pictures/' + selected_course + '/'+ image_file) }}" alt="{{ image_file }}" alt = "{{ selected_course }}" id="question-img">
     </div>
     <script>
         // Define a JavaScript variable to store the correct answer
@@ -25,5 +26,25 @@
     </div>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    <script>
+        window.onload = function() {
+            // Function to get URL parameter by name
+            function getUrlParameter(name) {
+                name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+                var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+                var results = regex.exec(location.search);
+                return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+            };
+        
+            // Get the value of the 'course' parameter from the URL
+            var selectedCourse = getUrlParameter('course');
+        
+            // Display the selected course wherever you want on the page
+            var selectedCourseElement = document.getElementById('selectedCourse');
+            if (selectedCourseElement) {
+                selectedCourseElement.textContent = selectedCourse;
+            }
+        };
+        </script>
 </body>
 </html>

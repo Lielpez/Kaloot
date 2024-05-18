@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+
 html, body {
     height: 100%;
     margin: 0;
@@ -29,7 +32,7 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
-    
+    align-items: center;
 }
 
 .logo {
@@ -210,4 +213,22 @@ body {
   
   .buttons button:focus {
     outline: 0;
+  }
+  
+  select {
+    color: #ffffff;
+    background-color: #568fa6;
+    width: 310px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "Varela Round", sans-serif;
+    font-weight:normal;
+    font-style:normal;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    user-select: none;
+    -webkit-user-drag: none;
   }
